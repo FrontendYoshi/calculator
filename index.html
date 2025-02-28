@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <!--Einbindung der externen JavaScript-Datei-->
+    <script src="JS/calculator.js"></script>
+</head>
+
+<body>
+    <div class="calculator">
+        <div id="display" class="display">0</div>
+        <div class="buttons">
+            <!--Eingabefelder für die Zahlen-->
+            <label for="Zahl1" ;>Zahl 1:</label>
+            <input type="number" id="Zahl1" placeholder="Zahl 1">
+            <br>
+            <label for="Zahl2" ;>Zahl 2:</label>
+            <input type="number" id="Zahl2" placeholder="Zahl 2">
+            <br>
+
+            <!--Schaltflächen für die Operationen und clear(löschen) und Ergebnisausgabe -->
+            <button class="btn clear" data-action="clear">C</button>
+            <button class="btn equal" data-action="equal">=</button>
+            <button class="btn operator" data-action="+">+</button>
+            <button class="btn operator" data-action="-">-</button>
+            <button class="btn operator" data-action="/">/</button>
+            <button class="btn operator" data-action="*">*</button>
+
+            <button class="btn number" data-value="1">1</button>
+            <button class="btn number" data-value="2">2</button>
+            <button class="btn number" data-value="3">3</button>
+            <button class="btn number" data-value="4">4</button>
+            <button class="btn number" data-value="5">5</button>
+            <button class="btn number" data-value="6">6</button>
+            <button class="btn number" data-value="7">7</button>
+            <button class="btn number" data-value="8">8</button>
+            <button class="btn number" data-value="9">9</button>
+
+            <button class="btn number zero" data-value="0">0</button>
+            <button class="btn number" data-value=".">.</button>
+            <!--Ergebnisanzeige-->
+            <h2 id="ergebnis">Ergebnis: </h2>
+        </div>
+    </div>
+
+</body>
+
+</html>

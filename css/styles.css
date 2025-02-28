@@ -1,0 +1,95 @@
+/* Reset der Standardbrowser-Stile: Der Code beginnt mit einem Reset, um sicherzustellen, dass alle Elemente einheitlich dargestellt werden. */
+* {
+    box-sizing: border-box;/* sorgt dafür, dass die Breite und Höhe von Elementen einfacher zu handhaben sind*/
+    margin: 0;/* entfernt den Standardabstand um die Elemente*/
+    padding: 0;/* entfernt den Standardabstand innerhalbt der Elemente */
+}
+
+/* Flexbox, um den Taschenrechner in der Mitte des Bildschirms zu positionieren. */
+body {
+    display: flex; /* aktiviertie die Flexbox, eine Technik, die hilft Elemente nebeneinander oder untereinander auszurichten */
+    align-items: center; /* sorgt dafür, dass der Taschenrechner (der in einem Container ist) vertikal in der Mitte der Seite platziert wird */
+    justify-content: center; /* sorgt dafür, dass der Taschenrechner horizontal in der Mitte der Seite platziert wird */
+    min-height: 100vh; /* stellt sicher, dass der body (Körper) immer die ganze Höhe des Bildschirms (100% der Höhe) einnimmt */
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%; ) font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* setzt einen Farbverlauf (Gradient) als Hintergrund, 
+    der von einem gelben Farbton zu einem rosafarbenen übergeht */
+/* font-family legt die Schriftart, die im gesamten Dokument verwendet wird fest. Wenn eine Schriftart nicht verfügbar ist, wird die nächste in der Liste verwendet */} 
+
+
+/* Calculator Container */
+.calculator {
+    background: #fff; /* setzt den Hintergrund für den Taschenrechner auf Weiß fest */
+    border-radius: 10px; /* rundet die Ecken des Containers (Taschenrechners) ab */
+    box-shadow: 0 10px 30px rgba (0,0,0,0.15); /* fügt dem Container (hier Taschenrechner) einen Schatten hinzu, damit er etwas "vom Hintergrund abhebt". 
+    horizontaler Abstand ist 0, was bedeutet, dass der Schatten genau unter dem Element (also in vertikaler Richtung) bleibt und nicht nach links oder rechts verschoben wird. 
+    vertikaler Abstand ist 10px, was bedeutet, dass der Schatten  um 10px nach unten verschoben wird.
+    Unschärferadius ist 30px, bestimmt wie stark der Schatten unscharf wird. Je größer der Wert, desto mehr "verblasst" der Schatten und desto weiter erstreckt er sich.
+    Farbe des Schattens rgba (0, 0, 0, 0.15) bedeutet ein shwarzer Schatten (0, 0, 0 für RGB) mit einer Transparenz von 15% (0.15)*/    
+    overflow: hidden; /* sorgt dafür, dass alles, was über die Kante des Containers hinausgeht, abgeschnitten wird. */
+    width: 320px; /* legt die Breite des Containers auf 320 Pixel fest. */
+}
+/* Display Screen */
+.display {
+    background: #222; /* setzt den Hintergrund des displays  auf ein dunkles Grau. */
+    color: #fff; /* stellt die Schriftfarbe auf Weiß. */
+    font-size: 2.5rem; /* legt die Schriftgröße auf 2,5-mal so groß wie die Standardgröße fest (rem ist eine Maßeinheit, die von der Schriftgröße des Root-Elements abhängt) */
+    text-align: right; /* richtet den text rechtsbündig aus, sodass die Zahlen im Display des Taschenrechners von rechts nach links erscheinen. */
+    padding: 20px; /* fügt einen Innenabstand von 20 Pixeln rund um den Text hinzu, damit der Text nicht direkt an den Rändern des Displays klebt. */
+    word-wrap: break-word; /* sorgt dafür, dass lange Wörter (z.B. Zahlen) automatisch umgebrochen werden, falls sie zu lang sind, um auf eine Zeile zu passen. */
+}
+
+/* Button Grid */
+.buttons {
+    display: grid; /* aktiviert das Grid-System, was eine einfache Möglichkeit ist, die Button in einem Raster (also Spalten und Reihen) anzuordnen. */
+    grid-template-columns: repeat(4, 1fr); /* sagt dem Browser, dass es 4 Spalten geben soll und jede Spalte den gleichen Platz einnimmt (1fr bedeutet "ein Anteil des verfügbaren Raums") Das sorgt dafür, dass deine Buttons in einem 4-Spalten-Raste angeordnet werden.
+}
+
+/* Base Button Styles */
+.btn {
+    border: 1px solid #ddd;
+    background: #e0e0e0;
+    font-size: 1.5rem;
+    padding: 20px;
+    cursor: pointer;
+    transition: background 0.3sec;
+}
+
+.btn:hover {
+    background: #e0e0e0;
+}
+
+/* Operator Buttons */
+.btn.operator {
+    background: #fea500;
+    color: #fff;
+}
+
+.btn.operator:hover {
+    background: #e59400;
+}
+
+/* Equal Button */
+.btn.equal {
+   background: #4caf50;
+   color: #ff;
+   grid-row: span 2; 
+}
+
+.btn.equal:hover {
+    background: #43a047;
+}
+
+/* Clear Button */
+.btn.clear {
+    background: #f44336;
+    color: #ffff;
+}
+
+.btn.clear:hover {
+    background: #e53935;
+}
+
+/* Zero Button spans two columns */
+.btn.zero {
+    grid-column: span 2;
+}
